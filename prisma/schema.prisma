@@ -16,8 +16,19 @@ model Issue {
   updatedAt        DateTime  @updatedAt
   assignedToUserId String?   @db.ObjectId
   assignedToUser   User?     @relation(fields: [assignedToUserId], references: [id])
-  priority  String @default("low")
+  priority  Priority @default(LOW)
   tags      String @default("work")
+}
+
+enum Priority {
+  HIGH
+  MEDIUM
+  LOW
+  CRITICAL
+  URGENT
+  NOT_STARTED
+  DEFERRED
+  BACKLOG
 }
 
 enum Status {

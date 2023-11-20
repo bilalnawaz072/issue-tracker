@@ -6,7 +6,7 @@ export const issueSchema = z.object({
     .string()
     .min(1, "Description is required.")
     .max(65535),
-    priority: z.string(),
+    priority: z.enum(['HIGH', 'MEDIUM', 'LOW', 'CRITICAL', 'URGENT', 'NOT_STARTED', 'DEFERRED', 'BACKLOG']),
     tags: z.string(),
 });
 

@@ -18,6 +18,7 @@ interface Props {
 }
 
 const IssueTable = ({ searchParams, issues }: Props) => {
+  
   return (
     <Table.Root variant="surface">
       <Table.Header>
